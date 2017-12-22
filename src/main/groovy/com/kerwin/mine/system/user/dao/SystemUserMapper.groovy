@@ -1,6 +1,7 @@
 package com.kerwin.mine.system.user.dao
 
 import com.kerwin.mine.system.user.domain.SystemUserInfo
+import com.kerwin.mine.system.user.enums.ActiveStatus
 import org.apache.ibatis.annotations.Mapper
 
 /**
@@ -32,7 +33,7 @@ interface SystemUserMapper {
     /**
      * 根据激活码查询激活状态
      */
-    int checkCode(String code)
+    Integer checkCodeStatusByCode(String code)
 
     /**
      * 根据激活码激活用户

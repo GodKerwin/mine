@@ -78,7 +78,7 @@ class UserService {
      */
     int checkCode(String code){
         try {
-            userMapper.checkCode(code)
+            userMapper.checkCodeStatusByCode(code)
         } catch (Exception e) {
             log.error(e.toString())
             throw new MineSystemException(ExceptionEnum.DATA_ERROR)

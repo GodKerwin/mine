@@ -8,10 +8,6 @@ spring:
     username: root
     password: rootroot
     driver-class-name: com.mysql.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

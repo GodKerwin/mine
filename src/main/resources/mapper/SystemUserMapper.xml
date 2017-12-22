@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+       Copyright 2015-2016 the original author or authors.
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kerwin.mine.system.user.dao.SystemUserMapper">
+
+    <resultMap id="SystemUser" type="com.kerwin.mine.system.user.domain.SystemUserInfo">
+        <result column="user_id" property="user_id"/>
+        <result column="password" property="password"/>
+        <result column="user_cn_name" property="user_cn_name"/>
+        <result column="email" property="email"/>
+        <result column="phone" property="phone"/>
+        <result column="crt_time" property="crt_time"/>
+        <result column="mod_time" property="mod_time"/>
+        <result column="code" property="code"/>
+        <result column="status" property="status" javaType="com.kerwin.mine.system.user.enums.ActiveStatus" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+    </resultMap>
+
+    <insert id="insertInfo" keyProperty="user_id" parameterType="com.kerwin.mine.system.user.domain.SystemUserInfo">
+      INSERT INTO `SYSTEM_USER` (user_id, password, user_cn_name, email, phone, crt_time, mod_time, code, status)
+      VALUES (#{user_id}, #{password}, #{user_cn_name}, #{email}, #{phone}, #{crt_time}, #{mod_time}, #{code}, #{status.value})
+    </insert>
+
+    <select id="getInfoByKey" resultMap="SystemUser">
+        SELECT * FROM `SYSTEM_USER` us WHERE us.USER_ID = #{user_id}
+    </select>
+
+    <select id="checkUserExist" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM `SYSTEM_USER` us WHERE us.USER_ID = #{user_id}
+    </select>
+
+    <select id="getUserPassword" resultType="java.lang.String">
+        SELECT PASSWORD FROM `SYSTEM_USER` us WHERE us.USER_ID = #{user_id}
+    </select>
+
+    <select id="checkCodeStatusByCode" resultType="java.lang.Integer">
+        SELECT STATUS FROM `SYSTEM_USER` WHERE CODE = #{code}
+    </select>
+
+    <update id="updateStatusByCode">
+        UPDATE `SYSTEM_USER` SET STATUS = 1 WHERE CODE = #{code}
+    </update>
+
+</mapper>

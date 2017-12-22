@@ -1,0 +1,77 @@
+ <form name = "register" ng-submit = "formSubmit()" novalidate>
+    <div id="regist" class="row">
+        <h1>我的世界欢迎你</h1>
+        <div>
+            <input name = "username" ng-model="reg.username" ng-pattern="/[A-Za-z0-9]+/" type="text" placeholder = "请输入用户名" required><br>
+            <span style="color: #ffffff" ng-show="register.username.$dirty && register.username.$invalid">
+                <span ng-show="register.username.$error.required">请输入用户名</span>
+            </span>
+        </div>
+
+        <div>
+            <input name = "password" ng-model="reg.password" ng-pattern="/[A-Za-z0-9]+/" type="password" placeholder = "请输入密码" minlength="6" maxlength="20" required><br>
+            <span style="color: #ffffff" ng-show="register.password.$dirty && register.password.$invalid">
+                <span ng-show="register.password.$error.required">请输入密码</span>
+            </span>
+            <span style="color: #ffffff" ng-show="register.password.$dirty && register.password.$invalid">
+                <span>密码长度6-20个字符</span>
+            </span>
+        </div>
+
+        <div>
+            <input name = "repassword" ng-model="reg.repassword" ng-pattern="/[A-Za-z0-9]+/" type="password" placeholder = "请再次输入密码" minlength="6" maxlength="20" required><br>
+            <span style="color: #ffffff" ng-show="register.repassword.$dirty && register.repassword.$invalid">
+                <span ng-show="register.repassword.$error.required">请输入确认密码</span>
+            </span>
+             <span style="color: #ffffff" ng-show="register.repassword.$dirty && register.repassword.$invalid">
+                <span>密码长度6-20个字符</span>
+            </span>
+            <span style="color: #ffffff" ng-show="register.password.$valid && register.repassword.$valid && reg.password!=reg.repassword">
+                <span>确认密码不一致</span>
+            </span>
+        </div>
+
+        <div>
+            <input name = "email" ng-model="reg.email" type="email" placeholder = "请输入邮箱" required><br>
+            <span style="color: #ffffff" ng-show="register.email.$dirty && register.email.$invalid">
+                <span ng-show="register.email.$error.required">请输入邮箱</span>
+                <span ng-show="register.email.$error.email">请输入合法的邮箱地址</span>
+            </span>
+        </div>
+
+        <label>------------------以下内容非必填------------------</label>
+        <div>
+            <input name = "cname" ng-model="reg.cname" type="text" placeholder = "请输入中文名"><br>
+            <span style="color: #ffffff" ng-show="register.cname.$dirty && register.cname.$invalid">
+                <span ng-show="register.cname.$error.required">请输入中文名</span>
+            </span>
+        </div>
+
+        <div>
+            <input name = "phone" ng-model="reg.phone" ng-pattern="/\d+/" type="text" placeholder = "请输入手机号" minlength="11" maxlength="11"><br>
+            <span style="color: #ffffff" ng-show="register.phone.$dirty && register.phone.$invalid">
+                <span ng-show="register.phone.$error.required">请输入手机号</span>
+            </span>
+             <span style="color: #ffffff" ng-show="register.phone.$dirty && register.phone.$invalid">
+                <span>请输入11位手机号</span>
+            </span>
+        </div>
+
+        <div id = "code">
+            <input name = "code" ng-model="reg.code" ng-pattern="/^\d+$/" type="text" placeholder = "请输入手机验证码" minlength="6" maxlength="6">
+            <timer-button showtimer="false"></timer-button><br>
+            <span style="color: #ffffff" ng-show="register.code.$dirty && register.code.$error.required">
+                <span>请输入手机验证码</span>
+            </span>
+             <span style="color: #ffffff" ng-show="register.code.$dirty && register.code.$invalid">
+                <span>请输入6位验证码</span>
+            </span>
+        </div>
+
+        <div>
+            <button class="btn btn-primary btn-large" type="submit" ng-disabled="register.$invalid || reg.password!=reg.repassword">注册</button>
+            <button class="btn btn-primary btn-large" type="button" ng-click = "return()">返回上一页</button>
+        </div>
+
+    </div>
+</form>

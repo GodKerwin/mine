@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    name: 127.0.0.1_mine
+    url: jdbc:mysql://127.0.0.1:3306/mine?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: rootroot
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.kerwin.mine.system.user.domain
+  type-handlers-package: com.kerwin.mine.system.user.mapper
+  configuration:
+      map-underscore-to-camel-case: true
+      default-fetch-size: 100
+      default-statement-timeout: 30
+
+mail:
+  url: 172.16.23.33:8080
+  username: MineWorldServer@163.com
+  password: cptbtptp123
+  content: Click here to activate your account
+  subject: 来自徐大大-我的世界网站的激活邮件

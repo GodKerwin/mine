@@ -1,0 +1,81 @@
+<div id="poker_scene">
+    <div class="row" id="hideCards">
+        <div class="poker col-lg-4" ng-repeat="poker in poker.hideCards">
+            <img ng-src="/app/img/game/poker/{{poker.type}}-{{poker.card_value}}.png">
+        </div>
+    </div>
+    <div id="poker_playerA">
+        <img src="/app/img/game/poker/farmer.png" class="poker_head_sign" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer !== 'playerA'">
+        <img src="/app/img/game/poker/land.png" class="poker_head_sign" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer === 'playerA'">
+        <!--<img src="/app/img/game/poker/win_farmer.png" class="poker_head" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer !== 'playerA'">-->
+        <!--<img src="/app/img/game/poker/win_land.png" class="poker_head" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer === 'playerA'">-->
+        <span>徐帅帅</span>
+        <div id="a_btn">
+            <button id="callLandBtn" class="btn" ng-click="callLandlord(global.user_id, 'playerA', true)"
+                    ng-show="global.startPokerFlag && global.callLandFlag">
+            </button>
+            <button id="unCallLandBtn" class="btn" ng-click="callLandlord(global.user_id, 'playerA', false)"
+                    ng-show="global.startPokerFlag && global.callLandFlag">
+            </button>
+            <button id="pushPokerBtn" class="btn" ng-click="pushPoker(global.user_id,
+                    'playerA', global.last_player, poker.playerA.push_pokers, global.last_push_pokers)"
+                    ng-show="global.player=='playerA'">
+            </button>
+            <button id="unPushPokerBtn" class="btn" ng-click="changePlayer()"
+                    ng-show="global.player=='playerA' && global.last_player.length != 0 && global.last_player != 'playerA'">
+            </button>
+        </div>
+        <div id="a_poker">
+            <div class="poker row" ng-repeat="poker in poker.playerA.playerPokers track by $index">
+                <img ng-class="{'poker': true,'poker_Choosed': poker.choose_flag == 1,'poker_noChoose':poker.choose_flag == 0}"
+                     ng-src="/app/img/game/poker/{{poker.type}}-{{poker.card_value}}.png"
+                     ng-click="chooseOne($event, poker, 'playerA')">
+            </div>
+        </div>
+    </div>
+
+    <div id="poker_playerB">
+        <img src="/app/img/game/poker/farmer.png" class="poker_head_sign" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer !== 'playerB'">
+        <img src="/app/img/game/poker/land.png" class="poker_head_sign" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer === 'playerB'">
+        <span>老王</span>
+        <div class="poker" ng-repeat="poker in poker.playerB.playerPokers track by $index">
+            <img ng-src="/app/img/game/poker/{{poker.type}}-{{poker.card_value}}.png">
+        </div>
+    </div>
+    <div id="poker_playerC">
+        <img src="/app/img/game/poker/farmer.png" class="poker_head_sign" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer !== 'playerC'">
+        <img src="/app/img/game/poker/land.png" class="poker_head_sign" ng-show="global.startPokerFlag && !global.callLandFlag && global.landPlayer === 'playerC'">
+        <span>串哥</span>
+        <div class="poker" ng-repeat="poker in poker.playerC.playerPokers track by $index">
+            <img ng-src="/app/img/game/poker/{{poker.type}}-{{poker.card_value}}.png">
+        </div>
+    </div>
+
+    <div id="pushed_pokers">
+        <div id="a_pushed_pokers">
+            <img src="/app/img/game/poker/noPush.png"
+                 ng-show="poker.playerA.unPushFlag">
+            <div class="row" ng-repeat="poker in poker.playerA.history track by $index">
+                <img ng-src="/app/img/game/poker/{{poker.type}}-{{poker.card_value}}.png">
+            </div>
+        </div>
+        <div id="b_pushed_pokers">
+            <img src="/app/img/game/poker/noPush.png"
+                 ng-show="poker.playerB.unPushFlag">
+            <div ng-repeat="poker in poker.playerB.history track by $index">
+                <img ng-src="/app/img/game/poker/{{poker.type}}-{{poker.card_value}}.png">
+            </div>
+        </div>
+        <div id="c_pushed_pokers">
+            <img src="/app/img/game/poker/noPush.png"
+                 ng-show="poker.playerC.unPushFlag">
+            <div ng-repeat="poker in poker.playerC.history track by $index">
+                <img ng-src="/app/img/game/poker/{{poker.type}}-{{poker.card_value}}.png">
+            </div>
+        </div>
+    </div>
+
+    <img src="/app/img/game/poker/pokers.png" id="pokerStartBtn" class="btn, btn-block"
+         ng-click="startPoker(global.user_id)" ng-show="!global.startPokerFlag">
+
+</div>

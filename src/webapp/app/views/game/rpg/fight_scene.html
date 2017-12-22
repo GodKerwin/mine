@@ -1,0 +1,18 @@
+<div id="fight_scene">
+    <div id="rolemap" class="row">
+        <div id="map_button" class="col-md-1">
+            <button ng-click="showMap()" class="btn-block btn-primary" id="showmap_button">查看地图</button>
+            <button ng-click="showGood()" class="btn-block btn-primary" id="showgood_button">查看物品</button>
+            <button ng-click="showStatus()" class="btn-block btn-primary" id="showstatus_button">查看状态</button>
+        </div>
+        <canvas id="map" class="col-md-11"></canvas>
+    </div>
+
+    <div id="statis" ng-show="show_statis">
+        <div class="panel-heading">战斗记录</div>
+        <div class="panel-body">
+            <button ng-click="clear()" class="btn-block btn-primary" id="clear_button">清屏</button>
+            <span class="console">{{fight_data}}</span>
+        </div>
+    </div>
+</div>

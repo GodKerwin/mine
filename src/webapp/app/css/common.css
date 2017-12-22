@@ -1,0 +1,635 @@
+/*按钮样式*/
+.modal_btnSave {
+    display: inline-block;
+    background-color: #EC732C;
+    color: #FFF;
+    width: 60px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #EC732C;
+}
+
+.modal_btnSave:hover {
+    background-color: #FF9933;
+    color: #FFF;
+}
+
+.modal_btnCancel {
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+    line-height: 30px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #FFF;
+    border: 1px solid #EC732C;
+    color: #EC732C;
+}
+
+.modal_btnCancel:hover {
+    background-color: #FF9933;
+    color: #FFF;
+}
+
+body {
+    /*padding-top: 30px;*/
+    /*background-image: url("../img/bg.jpg");*/
+    /*background-color: #afd9ee;*/
+    /*background-size: cover;*/
+    font-size: 16px;
+    line-height: 25px;
+    color: #000000;
+    font-family: 'Armata', Arial, Helvetica, sans-serif;
+    overflow-y: auto;
+    margin: 0;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    object-fit: cover;
+}
+
+.stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+    letter-spacing: 0.04em;
+}
+
+/*-------------------登录主页-----------------------*/
+#title {
+    font-size: 50px;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-family: "楷体";
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+}
+
+#login {
+    height: 300px;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+    position: absolute;
+    top: 50%;
+    width: 300px;
+    text-align: center;
+}
+
+#login, #regist h1 {
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(122, 255, 255, 1);
+}
+
+input {
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: 0 -5px 45px rgba(100, 100, 100, 0.2) inset, 0 1px 1px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 10px;
+    outline: medium none;
+    padding: 10px;
+    -moz-text-shadow: 5px 5px 5px rgba(255, 255, 255, 1);
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 1);
+    width: 100%;
+}
+
+input:focus {
+    background: rgba(22, 112, 22, 0.3) none repeat scroll 0 0;
+}
+
+.btn-large {
+    margin-bottom: 10px;
+    padding: 9px 14px;
+    font-size: 15px;
+    line-height: normal;
+    border-radius: 5px;
+}
+
+.btn-primary :hover {
+    color: #ffffff;
+}
+
+/*-------------------注册页面-----------------------*/
+
+#regist {
+    height: 500px;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    text-align: center;
+}
+
+#regist input {
+    width: 60%;
+}
+
+#regist .btn-primary {
+    width: 30%;
+}
+
+#code {
+    position: relative;
+}
+
+#code .btn-regist {
+    position: absolute;
+    width: 25%;
+    top: 6px;
+    right: 110px;
+    z-index: 100;
+}
+
+/*-------------------我的世界主页-----------------------*/
+
+#mineworld {
+    width: 1000px;
+    height: 400px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+#mineworld div {
+    width: 500px;
+    height: 400px;
+    float: left;
+}
+
+#mineworld img {
+    width: 350px;
+    height: 200px;
+    cursor: pointer;
+}
+
+#mineworld label {
+    font-size: 40px;
+    font-family: "宋体";
+    text-shadow: 5px 5px 5px rgba(255, 255, 255, 1);
+}
+
+/*-------------------文字冒险游戏主页-----------------------*/
+
+.mine {
+    background-image: url("../img/bg.jpg");
+    border-radius: 5px;
+    height: 500px;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    text-align: center;
+}
+
+.mine .mine-word {
+    font-size: 20px;
+    font-family: "楷体";
+    color: #000000;
+    text-shadow: 5px 5px 5px rgba(255, 255, 255, 1);
+}
+
+.mine .dead .mine-word {
+    color: red;
+}
+
+/*-------------------城市精灵go图鉴主页-----------------------*/
+
+#mine2 {
+    height: 768;
+    width: 1024;
+    background-image: url("../img/go/gobg.jpg");
+}
+
+#go-body {
+    height: 840px;
+    width: 1260px;
+    margin: auto;
+    position: relative;
+}
+
+.go-elf-div {
+    width: 105px;
+    height: 105px;
+    color: #000000;
+    font-family: "隶书";
+    text-shadow: 5px 5px 5px rgba(225, 225, 225, 1);
+    position: relative;
+}
+
+.go-elf-text {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    z-index: 51;
+    cursor: pointer;
+}
+
+.go-elf-border {
+    height: 100px;
+    width: 100px;
+    opacity: 1;
+    z-index: 49;
+}
+
+.go-img {
+    height: 80px;
+    width: 80px;
+    opacity: 0.5;
+    z-index: 50;
+    position: absolute;
+    left: 25px;
+    top: 10px;
+}
+
+.go-img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.go-elf-detail {
+    width: 50%;
+    height: 50%;
+    z-index: 100;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    background-image: url("../img/bg2.jpg");
+    border: 5px solid white;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.go-img-detail {
+    position: absolute;
+    top: 10%;
+}
+
+.go-img-detail img {
+    width: 200px;
+    height: 200px;
+}
+
+.go-elf-detail button {
+    position: absolute;
+    bottom: 10%;
+    left: 45%;
+}
+
+.go-elf-desc {
+    font-size: 20px;
+    text-align: left;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    right: 10%;
+    top: 20%;
+}
+
+#cas {
+    display: block;
+    border: 1px solid;
+    margin: auto;
+}
+
+/*-------------------CanvasDemo-----------------------*/
+#mine5 div {
+    text-align: center;
+}
+
+/*-------------------CanvasDemo-----------------------*/
+
+/*------------------------------------------游戏模块----------------------------------------------*/
+
+/*-------------------游戏主页-----------------------*/
+
+/*-------------------战斗场景-----------------------*/
+#fight_scene {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#rolemap {
+
+}
+
+#rolemap button {
+    vertical-align: middle;
+    height: 28px;
+    width: 90px;
+    background-color: lightsalmon;
+    color: #000000;
+}
+
+#statis {
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#statis #clear_button {
+    vertical-align: middle;
+    position: fixed;
+    right: 20px;
+    height: 28px;
+    width: 90px;
+    background-color: lightsalmon;
+    color: #000000;
+}
+
+#statis .panel-heading {
+    color: #000000;
+}
+
+#statis .panel-body {
+    background-color: #000000;
+    padding: 0;
+    overflow: auto;
+    overflow-y: scroll;
+    height: 175px;
+    text-align: center;
+}
+
+#statis .console {
+    color: #00FF00;
+    margin: 0;
+    word-break: normal;
+    width: auto;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-height: 1;
+    font-size: 15px;
+    font-family: '楷体';
+}
+
+/*-------------------斗地主-----------------------*/
+/*主界面*/
+#poker_scene {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+}
+
+#poker_scene img {
+    display: block;
+    width: 85px;
+}
+
+#poker_scene .poker {
+    cursor: pointer;
+}
+
+#poker_scene .poker_noChoose {
+    margin: 50px 0 0 0;
+}
+
+#poker_scene .poker_Choosed {
+    margin: 0;
+}
+
+/*底牌区*/
+#hideCards {
+    width: 20%;
+    height: 125px;
+    position: absolute;
+    left: 40%;
+}
+
+/*A牌区*/
+#poker_playerA {
+    width: 60%;
+    height: 250px;
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+}
+
+#poker_playerA .poker_head_sign {
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    top: -12%;
+    left: 40%;
+}
+
+/*#poker_playerA .poker_head {*/
+    /*height: 80px;*/
+    /*width: 80px;*/
+    /*position: absolute;*/
+    /*top: -12%;*/
+    /*left: 40%;*/
+/*}*/
+
+#a_btn {
+    height: 75px;
+}
+
+#a_poker {
+    height: 175px;
+}
+
+#poker_playerA .poker {
+    float: left;
+}
+
+/*B牌区*/
+#poker_playerB {
+    width: 10%;
+    height: 600px;
+    position: absolute;
+    bottom: 200px;
+    right: 0px;
+}
+
+#poker_playerB .poker_head_sign {
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    left: 0px;
+}
+
+#poker_playerB .poker {
+    height: 25px;
+}
+
+#poker_playerB img {
+    margin: 0 auto;
+}
+
+/*C牌区*/
+#poker_playerC {
+    width: 10%;
+    height: 600px;
+    position: absolute;
+    bottom: 200px;
+    left: 0px;
+}
+
+#poker_playerC .poker_head_sign {
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    right: 0px;
+}
+
+#poker_playerC .poker {
+    height: 25px;
+}
+
+#poker_playerC img {
+    margin: 0 auto;
+}
+
+/*出牌区*/
+#pushed_pokers {
+    top: 150px;
+    right: 15%;
+    position: absolute;
+    width: 70%;
+    height: 400px;
+    z-index: -10;
+}
+
+#a_pushed_pokers {
+    height: 150px;
+    width: 60%;
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+}
+
+#a_pushed_pokers div {
+    float: left;
+}
+
+#b_pushed_pokers {
+    height: 400px;
+    width: 20%;
+    position: absolute;
+    right: 0;
+}
+
+#b_pushed_pokers div {
+    height: 25px;
+}
+
+#b_pushed_pokers img {
+    margin: 0 auto;
+}
+
+#c_pushed_pokers {
+    height: 400px;
+    width: 20%;
+    position: absolute;
+    left: 0;
+}
+
+#c_pushed_pokers div {
+    height: 25px;
+}
+
+#c_pushed_pokers img {
+    margin: 0 auto;
+}
+
+/*按钮区*/
+#pokerStartBtn {
+    position: absolute;
+    height: 120px;
+    width: 60px;
+    top: 28%;
+    left: 47%;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#callLandBtn {
+    margin: 20px 0 0 20px;
+    left: auto;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    background-image: url("/app/img/game/poker/Call.png");
+    background-size: 100% 100%
+}
+
+#unCallLandBtn {
+    margin: 20px 0 0 20px;
+    left: auto;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    background-image: url("/app/img/game/poker/unCall.png");
+    background-size: 100% 100%
+}
+
+#pushPokerBtn {
+    margin: 20px 0 0 20px;
+    left: auto;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    background-image: url("/app/img/game/poker/push.png");
+    background-size: 100% 100%
+}
+
+#unPushPokerBtn {
+    margin: 20px 0 0 20px;
+    left: auto;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    background-image: url("/app/img/game/poker/unPush.png");
+    background-size: 100% 100%
+}
+
+
+/*-------------------爱心鱼-----------------------*/
+#fish_scene{
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+#fish_scene .all_canvas{
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 0;
+}
+
+#canvas_front{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#canvas_behind{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}

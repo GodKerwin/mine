@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>我的世界</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="app/img/favicon.png"/>
+
+    <link href="/app/css/bootstrap.css" rel="stylesheet">
+    <link href="/app/css/fonts/stylesheet.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/app/css/jquery.lightbox-0.5.css"/>
+
+    <link rel="stylesheet" type="text/css" href="/app/css/common.css"/>
+
+</head>
+<body ng-controller="myCtrl" style="height: 100%; text-align:center">
+
+<video autoplay muted loop>
+    <source src="/app/video/Yasuo.mp4">
+</video>
+
+<div ng-view></div>
+
+</body>
+
+<script type="text/javascript" src="/app/components/cv-components.min.js"></script>
+<script type="text/javascript" src="/app/js/service/ModalService.js"></script>
+<script type="text/javascript" src="/app/js/controllers/ModalCtrl.js"></script>
+<script type="text/javascript" src="/login.js"></script>
+
+</html>

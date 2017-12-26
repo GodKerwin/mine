@@ -3,12 +3,10 @@ package com.kerwin.mine.game.poker.service
 import com.kerwin.mine.game.poker.domain.PlayersPokers
 import com.kerwin.mine.game.poker.domain.Poker
 import com.kerwin.mine.game.poker.domain.PokerType
-import org.springframework.stereotype.Service
 
 /**
  * Created by lxu on 2017/12/22.
  */
-@Service
 class PokerService {
 
     //删除已出的牌

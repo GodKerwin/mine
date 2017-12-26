@@ -97,17 +97,17 @@ class UserController {
 
         //校验激活码
         if (code) {
-            throw new MineSystemException(ExceptionEnum.ACTIVECODE_NOT_EXIST)
-        } else {
             int status = userService.checkCode(code)
-            if (status && status == ActiveStatus.INACTIVE.value) {
+            if (status == ActiveStatus.INACTIVE.value) {
                 userService.updateStatusByCode(code)
                 log.debug "激活用户成功!"
-            } else if (status && status == ActiveStatus.ACTIVATION.value) {
+            } else if (status == ActiveStatus.ACTIVATION.value) {
                 throw new MineSystemException(ExceptionEnum.ACCOUNT_ACTIVATION)
             } else {
                 throw new MineSystemException(ExceptionEnum.ACTIVECODE_NOT_EXIST)
             }
+        } else {
+            throw new MineSystemException(ExceptionEnum.ACTIVECODE_NOT_EXIST)
         }
 
         log.info "-----------------UserRegister End-----------------"

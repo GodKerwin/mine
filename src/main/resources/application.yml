@@ -10,9 +10,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.kerwin.mine.system.user.domain
-  type-handlers-package: com.kerwin.mine.system.user.mapper
+  mapper-locations: classpath:mapper/**/**/*.xml
+  type-aliases-package: com.kerwin.mine.**.**.domain
+  type-handlers-package: com.kerwin.mine.**.**.dao
   configuration:
       map-underscore-to-camel-case: true
       default-fetch-size: 100

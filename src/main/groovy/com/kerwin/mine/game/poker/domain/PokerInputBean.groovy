@@ -41,4 +41,16 @@ class PokerInputBean extends BasicInputBean{
     static List<Poker> parseJsonToObj(String json) {
         return (List<Poker>) JSON.parse(json)
     }
+
+    @Override
+    String toString() {
+        return "PokerInputBean{" +
+                "user_id='" + user_id + '\'' +
+                ", player='" + player + '\'' +
+                ", push_pokers='" + push_pokers + '\'' +
+                ", last_player='" + last_player + '\'' +
+                ", last_push_pokers='" + last_push_pokers + '\'' +
+                ", call_flag=" + call_flag +
+                '}'
+    }
 }

@@ -84,6 +84,18 @@ class Poker implements Comparable<Poker>, Serializable{
         return washedPokers
     }
 
+    Poker(int id, int type, String type_cname, int card_value, String card_cname, int choose_flag) {
+        this.id = id
+        this.type = type
+        this.type_cname = type_cname
+        this.card_value = card_value
+        this.card_cname = card_cname
+        this.choose_flag = choose_flag
+    }
+
+    Poker() {
+    }
+
     /**
      * id
      */

@@ -2,6 +2,7 @@ package com.kerwin.mine.system.basic.utils
 
 import com.kerwin.mine.system.basic.domain.BasicOutputBean
 import com.kerwin.mine.system.basic.enums.ExceptionEnum
+import com.kerwin.mine.system.basic.exception.MineSystemException
 
 /**
  * Created by lxu on 2017/12/21.
@@ -22,10 +23,10 @@ class BasicOutputBeanUtil {
         success(null)
     }
 
-    static BasicOutputBean error(ExceptionEnum exceptionEnum) {
+    static BasicOutputBean error(Integer code, String msg) {
         BasicOutputBean output = new BasicOutputBean([
-                code   : exceptionEnum.code,
-                message: exceptionEnum.msg
+                code   : code,
+                message: msg
         ])
         return output
     }

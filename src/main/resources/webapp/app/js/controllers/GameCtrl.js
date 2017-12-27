@@ -610,9 +610,8 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
         if (!$scope.global.startPokerFlag) {
             var Params = {srv_name: 'game/poker/queryGroupPoker.do', data: {user_id: user_id}};
             HttpProvider.call(Params).then(function (data) {
-                if (data.srv_status === 2) {
-                    mine.alert(data.message);
-                } else if (data.srv_status === 1) {
+                if (data) {
+                    data = data.data;
                     $scope.poker.playerA.playerPokers = data.groupPokers.playerA;
                     $scope.poker.playerB.playerPokers = data.groupPokers.playerB;
                     $scope.poker.playerC.playerPokers = data.groupPokers.playerC;
@@ -622,7 +621,7 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
                 $scope.global.startPokerFlag = true;
                 $scope.global.callLandFlag = true;
             }, function (error) {
-                mine.alert(error.scode);
+                mine.alert('发生未知错误');
             });
         } else {
             mine.alert("已开局！")
@@ -633,9 +632,8 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
         if ($scope.global.callLandFlag) {
             var Params = {srv_name: 'game/poker/callLandlord.do', data: {user_id: user_id, player: player, call_flag: flag}};
             HttpProvider.call(Params).then(function (data) {
-                if (data.srv_status === 2) {
-                    mine.alert(data.message);
-                } else if (data.srv_status === 1) {
+                if (data) {
+                    data = data.data;
                     //赋值抢到地主的玩家
                     player = data.player;
                     if (player !== "none") {
@@ -668,7 +666,7 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
                     }
                 }
             }, function (error) {
-                mine.alert(error.scode);
+                mine.alert('发生未知错误');
             });
         } else {
             mine.alert("地主叫过了，专心打牌吧！")
@@ -691,32 +689,34 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
                     }
                 };
                 HttpProvider.call(Params).then(function (data) {
-                    if (data.srv_status === 2) {
-                        mine.alert(data.message);
-                        for (var i = 0; i < $scope.poker.playerA.playerPokers.length; i++) {
-                            $scope.poker.playerA.playerPokers[i].choose_flag = 0;
-                        }
-                        $scope.poker.playerA.push_pokers = [];
-                    } else if (data.srv_status === 1) {
-                        $scope.poker.playerA.playerPokers = data.groupPokers.playerA;
-                        $scope.poker.playerB.playerPokers = data.groupPokers.playerB;
-                        $scope.poker.playerC.playerPokers = data.groupPokers.playerC;
-                        $scope.poker.hideCards = data.groupPokers.hideCards;
-                        $scope.global.last_player = player;
-                        $scope.global.last_push_pokers = push_pokers;
-                        $scope.changePlayer();
-                        //若已结束
-                        if (data.over_flag) {
-                            resetPlay();
-                            mine.confirm('恭喜' + player + "!\n再来一局？").then(function (choose) {
-                                if (choose) {
-                                    $scope.startPoker($scope.global.user_id);
-                                }
-                            });
+                    if (data) {
+                        if(data.code !== 0){
+                            for (var i = 0; i < $scope.poker.playerA.playerPokers.length; i++) {
+                                $scope.poker.playerA.playerPokers[i].choose_flag = 0;
+                            }
+                            $scope.poker.playerA.push_pokers = [];
+                        }else {
+                            data = data.data;
+                            $scope.poker.playerA.playerPokers = data.groupPokers.playerA;
+                            $scope.poker.playerB.playerPokers = data.groupPokers.playerB;
+                            $scope.poker.playerC.playerPokers = data.groupPokers.playerC;
+                            $scope.poker.hideCards = data.groupPokers.hideCards;
+                            $scope.global.last_player = player;
+                            $scope.global.last_push_pokers = push_pokers;
+                            $scope.changePlayer();
+                            //若已结束
+                            if (data.over_flag) {
+                                resetPlay();
+                                mine.confirm('恭喜' + player + "!\n再来一局？").then(function (choose) {
+                                    if (choose) {
+                                        $scope.startPoker($scope.global.user_id);
+                                    }
+                                });
+                            }
                         }
                     }
                 }, function (error) {
-                    mine.alert(error.scode);
+                    mine.alert('发生未知错误');
                 });
             }
         } else {
@@ -735,9 +735,8 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
             }
         };
         HttpProvider.call(Params).then(function (data) {
-            if (data.srv_status === 2) {
-                mine.alert(data.message);
-            } else if (data.srv_status === 1) {
+            if (data) {
+                data = data.data;
                 if (player === "playerA") {
                     $scope.poker.playerA.push_pokers = data.push_pokers;
                 } else if (player === "playerB") {
@@ -1491,7 +1490,7 @@ game.controller('cardSceneCtrl', function ($scope, $location, $interval, $timeou
     document.onkeydown = function (e) {
         switch (e.keyCode) {
             case 65 :
-                index = index <= 0 ? 0 : index - 1
+                index = index <= 0 ? 0 : index - 1;
                 break;
             default :
                 index++;

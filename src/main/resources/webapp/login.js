@@ -15,15 +15,14 @@ App.config(['$routeProvider',
             templateUrl: 'active.html',
             controller: "activeCtrl"
         }).otherwise({
-                redirectTo: "/index"
-            }
-        );
+            redirectTo: "/index"
+        });
     }
 ]);
 
 //主页控制器
 App.controller('myCtrl', function ($scope, $location) {
-
+    console.log("欢迎来到我的世界")
 });
 
 //登录控制器
@@ -38,13 +37,11 @@ App.controller('loginCtrl', function ($scope, $location, $window, HttpProvider, 
             data: {user_id: $scope.user.username, password: $scope.user.password}
         };
         HttpProvider.call(Params).then(function (data) {
-            if (data.srv_status == 2) {
-                mine.alert(data.message);
-            } else if (data.srv_status == 1) {
+            if (data) {
                 window.location.href = 'app/index.html';
             }
         }, function (error) {
-            mine.alert(error.scode);
+            mine.alert('发生未知错误');
         })
     }
 });
@@ -56,21 +53,18 @@ App.controller('registerCtrl', function ($scope, $location, HttpProvider, mine) 
         $location.url("/index");
     };
     $scope.formSubmit = function () {
-        $scope.reg.phone = parseInt($scope.reg.phone);
         var Params = {
             srv_name: 'system/user/userRegister.do',
             data: {
-                user_id: $scope.reg.username,
-                password: $scope.reg.password,
-                user_cn_name: $scope.reg.cname,
-                email: $scope.reg.email,
-                phone: $scope.reg.phone
+                "systemUserInfo.user_id": $scope.reg.username,
+                "systemUserInfo.password": $scope.reg.password,
+                "systemUserInfo.user_cn_name": $scope.reg.cname,
+                "systemUserInfo.email": $scope.reg.email,
+                "systemUserInfo.phone": $scope.reg.phone,
             }
-        }
+        };
         HttpProvider.call(Params).then(function (data) {
-            if (data.srv_status == 2) {
-                mine.alert(data.message);
-            } else if (data.srv_status == 1) {
+            if (data) {
                 mine.alert('注册成功！请前往邮箱激活').then(function (choose) {
                     if (choose) {
                         $location.url("/index");
@@ -78,7 +72,7 @@ App.controller('registerCtrl', function ($scope, $location, HttpProvider, mine) 
                 });
             }
         }, function (error) {
-            mine.alert(error.scode);
+            mine.alert('发生未知错误')
         });
     }
 });
@@ -87,20 +81,23 @@ App.controller('registerCtrl', function ($scope, $location, HttpProvider, mine) 
 App.controller('activeCtrl', function ($scope, $location, $routeParams, $timeout, $interval, HttpProvider, mine) {
     var Params = {srv_name: 'system/user/activeUser.do', data: {code: $routeParams.code}};
     HttpProvider.call(Params).then(function (data) {
-        mine.alert("激活成功！请前往主页登陆！").then(function (choose) {
-            if (choose) {
-                $location.url("/index");
-            }
-        });
+        if (data) {
+            console.log(data);
+            mine.alert("激活成功！请前往主页登陆！").then(function (choose) {
+                if (choose) {
+                    $location.url("/index");
+                }
+            });
+        }
     }, function (error) {
-        mine.alert(error.scode);
+        mine.alert('发生未知错误');
     });
 });
 
 //调用后台服务
-App.service('HttpProvider', function ($http, $q) {
+App.service('HttpProvider', function ($http, $q, mine) {
     this.call = function (Params) {
-//      引入$q是为了让该服务有个回调方法，固定写法
+        //引入$q是为了让该服务有个回调方法，固定写法
         var _data = $q.defer();
         console.log(Params.srv_name, Params.data);
         //将参数传递的方式改成form
@@ -111,16 +108,15 @@ App.service('HttpProvider', function ($http, $q) {
             }
         };
         $http.post(Params.srv_name, Params.data, postCfg).success(function (data, status, headers, config) {
-            var _res_head = data.sys_header;
-            // if(_res_head.status == 'ok') {
-            _data.resolve(data)
-//             } else {
-// //                      服务返回失败状态一，空对象就是error对象，可自己定义
-//                 _data.reject(_res_head);
-//             }
+            console.log(data);
+            var _code = data.code;
+            if (_code === 0) {
+                _data.resolve(data)
+            } else {
+                mine.alert(data.message)
+            }
         }).error(function (data, status, headers, config) {
-//              服务根本就没有通，失败状态三
-            _data.reject({message: '发生未知错误'});
+            mine.alert('发生未知错误');
         });
         return _data.promise;
     }

@@ -76,7 +76,7 @@ class UserService {
     /**
      * 根据激活码查询激活状态
      */
-    int checkCode(String code){
+    Integer checkCodeStatusByCode(String code){
         try {
             userMapper.checkCodeStatusByCode(code)
         } catch (Exception e) {

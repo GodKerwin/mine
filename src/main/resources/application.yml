@@ -8,6 +8,8 @@ spring:
     username: root
     password: rootroot
     driver-class-name: com.mysql.jdbc.Driver
+  resources:
+    static-locations: classpath:/webapp/
 
 mybatis:
   mapper-locations: classpath:mapper/**/**/*.xml

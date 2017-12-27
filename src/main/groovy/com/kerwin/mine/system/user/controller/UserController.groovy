@@ -97,7 +97,7 @@ class UserController {
 
         //校验激活码
         if (code) {
-            int status = userService.checkCode(code)
+            Integer status = userService.checkCodeStatusByCode(code)
             if (status == ActiveStatus.INACTIVE.value) {
                 userService.updateStatusByCode(code)
                 log.debug "激活用户成功!"

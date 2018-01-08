@@ -5,6 +5,7 @@ import com.kerwin.mine.system.basic.enums.ExceptionEnum
 import com.kerwin.mine.system.basic.exception.MineSystemException
 import com.kerwin.mine.system.basic.service.MailService
 import com.kerwin.mine.system.basic.utils.BasicOutputBeanUtil
+import com.kerwin.mine.system.basic.utils.MD5Util
 import com.kerwin.mine.system.user.domain.SystemUserInfo
 import com.kerwin.mine.system.user.domain.UserInputBean
 import com.kerwin.mine.system.user.enums.ActiveStatus
@@ -77,7 +78,7 @@ class UserController {
 
         //校验用户密码
         String tb_password = userService.getUserPassword(user_id)
-        if (!tb_password.equals(password)) {
+        if (!tb_password.equals(MD5Util.encode(password))) {
             log.error "用户登录异常!!! 用户密码:${password} 错误"
             throw new MineSystemException(ExceptionEnum.LOGIN_ERROR)
         }

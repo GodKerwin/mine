@@ -2,6 +2,7 @@ package com.kerwin.mine.system.user.service
 
 import com.kerwin.mine.system.basic.enums.ExceptionEnum
 import com.kerwin.mine.system.basic.exception.MineSystemException
+import com.kerwin.mine.system.basic.utils.MD5Util
 import com.kerwin.mine.system.basic.utils.TimeUtil
 import com.kerwin.mine.system.basic.utils.UUID
 import com.kerwin.mine.system.user.domain.SystemUserInfo
@@ -28,8 +29,10 @@ class UserService {
         try {
             userInfo.setCrt_time(TimeUtil.timeStamp)
             userInfo.setMod_time(TimeUtil.timeStamp)
-            userInfo.setCode(UUID.getUUID() + UUID.getUUID())
+            userInfo.setCode(UUID.getCode())
             userInfo.setStatus(ActiveStatus.INACTIVE)
+            log.debug("用户密码加密")
+            userInfo.setPassword(MD5Util.encode(userInfo.password))
             userMapper.insertInfo(userInfo)
         } catch (Exception e) {
             log.error(e.toString())

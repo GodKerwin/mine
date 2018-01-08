@@ -43,7 +43,7 @@ body {
     /*background-color: #afd9ee;*/
     /*background-size: cover;*/
     font-size: 16px;
-    line-height: 25px;
+    /*line-height: 25px;*/
     color: #000000;
     font-family: 'Armata', Arial, Helvetica, sans-serif;
     overflow-y: auto;
@@ -68,7 +68,7 @@ video {
     letter-spacing: 0.04em;
 }
 
-/*-------------------登录主页-----------------------*/
+/*-------------------公共部分-----------------------*/
 #title {
     font-size: 50px;
     color: #ffffff;
@@ -76,14 +76,21 @@ video {
     text-align: center;
     font-family: "楷体";
     text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 20px;
+    z-index: 100;
 }
+
+/*-------------------登录主页-----------------------*/
 
 #login {
     height: 300px;
-    left: 50%;
+    right: 10%;
     margin: -150px 0 0 -150px;
     position: absolute;
-    top: 50%;
+    top: 45%;
     width: 300px;
     text-align: center;
 }
@@ -130,20 +137,20 @@ input:focus {
 
 #regist {
     height: 500px;
-    left: 50%;
+    right: 10%;
     margin: -250px 0 0 -250px;
     position: absolute;
-    top: 50%;
-    width: 500px;
+    top: 40%;
+    width: 300px;
     text-align: center;
 }
 
 #regist input {
-    width: 60%;
+    width: 100%;
 }
 
 #regist .btn-primary {
-    width: 30%;
+    width: 49%;
 }
 
 #code {
@@ -152,9 +159,9 @@ input:focus {
 
 #code .btn-regist {
     position: absolute;
-    width: 25%;
-    top: 6px;
-    right: 110px;
+    width: 45%;
+    top: 3px;
+    right: 2%;
     z-index: 100;
 }
 
@@ -435,11 +442,11 @@ input:focus {
 }
 
 /*#poker_playerA .poker_head {*/
-    /*height: 80px;*/
-    /*width: 80px;*/
-    /*position: absolute;*/
-    /*top: -12%;*/
-    /*left: 40%;*/
+/*height: 80px;*/
+/*width: 80px;*/
+/*position: absolute;*/
+/*top: -12%;*/
+/*left: 40%;*/
 /*}*/
 
 #a_btn {
@@ -605,29 +612,28 @@ input:focus {
     background-size: 100% 100%
 }
 
-
 /*-------------------爱心鱼-----------------------*/
-#fish_scene{
+#fish_scene {
     width: 800px;
     height: 600px;
     margin: 0 auto;
 }
 
-#fish_scene .all_canvas{
+#fish_scene .all_canvas {
     position: relative;
     width: 800px;
     height: 600px;
     margin: 0;
 }
 
-#canvas_front{
+#canvas_front {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 1;
 }
 
-#canvas_behind{
+#canvas_behind {
     position: absolute;
     bottom: 0;
     left: 0;

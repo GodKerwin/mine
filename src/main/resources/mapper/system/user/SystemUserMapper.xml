@@ -26,6 +26,7 @@
         <result column="mod_time" property="mod_time"/>
         <result column="code" property="code"/>
         <result column="status" property="status" javaType="com.kerwin.mine.system.user.enums.ActiveStatus" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <result column="role_id" property="role_id"/>
     </resultMap>
 
     <insert id="insertInfo" keyProperty="user_id" parameterType="com.kerwin.mine.system.user.domain.SystemUserInfo">

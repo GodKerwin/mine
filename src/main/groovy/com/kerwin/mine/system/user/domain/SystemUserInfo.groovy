@@ -52,6 +52,11 @@ class SystemUserInfo implements Serializable {
      */
     ActiveStatus status
 
+    /**
+     * 用户角色ID
+     */
+    String role_id
+
     @Override
     String toString() {
         return "SystemUserInfo{" +
@@ -64,6 +69,7 @@ class SystemUserInfo implements Serializable {
                 ", mod_time=" + mod_time +
                 ", code='" + code + '\'' +
                 ", status=" + status +
+                ", role_id='" + role_id + '\'' +
                 '}'
     }
 }

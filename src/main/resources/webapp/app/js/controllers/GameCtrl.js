@@ -608,7 +608,7 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
     //发牌/回到游戏
     $scope.startPoker = function (user_id) {
         if (!$scope.global.startPokerFlag) {
-            var Params = {srv_name: 'game/poker/queryGroupPoker.do', data: {user_id: user_id}};
+            var Params = {srv_name: 'game/poker/queryGroupPoker.do', data: {}};
             HttpProvider.call(Params).then(function (data) {
                 if (data) {
                     data = data.data;
@@ -630,7 +630,7 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
     //叫地主
     $scope.callLandlord = function (user_id, player, flag) {
         if ($scope.global.callLandFlag) {
-            var Params = {srv_name: 'game/poker/callLandlord.do', data: {user_id: user_id, player: player, call_flag: flag}};
+            var Params = {srv_name: 'game/poker/callLandlord.do', data: {player: player, call_flag: flag}};
             HttpProvider.call(Params).then(function (data) {
                 if (data) {
                     data = data.data;
@@ -681,7 +681,6 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
                 var Params = {
                     srv_name: 'game/poker/pushPoker.do',
                     data: {
-                        user_id: user_id,
                         player: player,
                         last_player: last_player,
                         push_pokers: angular.toJson(push_pokers),
@@ -728,7 +727,6 @@ game.controller('pokerSceneCtrl', function ($scope, $location, $interval, $timeo
         var Params = {
             srv_name: 'game/poker/judgeAI.do',
             data: {
-                user_id: user_id,
                 player: player,
                 last_player: last_player,
                 last_push_pokers: angular.toJson(last_push_pokers)

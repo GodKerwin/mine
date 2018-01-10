@@ -26,3 +26,6 @@ mail:
   password: cptbtptp123
   content: Click here to activate your account
   subject: 来自徐大大-我的世界网站的激活邮件
+
+user:
+  defaultRole: UROLE10003

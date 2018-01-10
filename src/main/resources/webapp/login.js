@@ -1,6 +1,11 @@
 "use strict";
 
-var App = angular.module("myApp", ['ngRoute', 'ui.bootstrap', 'ModalService', 'ModalCtrl']);
+var App = angular.module("myApp", ['ngRoute',
+    'ui.bootstrap',
+    'ngCookies',
+    'ModalService',
+    'ModalCtrl'
+]);
 
 //配置路由
 App.config(['$routeProvider',
@@ -26,7 +31,7 @@ App.controller('myCtrl', function ($scope, $location) {
 });
 
 //登录控制器
-App.controller('loginCtrl', function ($scope, $location, $window, HttpProvider, mine) {
+App.controller('loginCtrl', function ($scope, $location, $window, $cookies, HttpProvider, mine) {
     $scope.user = {};
     $scope.toRegist = function () {
         $location.url("/register");
@@ -37,8 +42,14 @@ App.controller('loginCtrl', function ($scope, $location, $window, HttpProvider, 
             data: {user_id: $scope.user.username, password: $scope.user.password}
         };
         HttpProvider.call(Params).then(function (data) {
-            if (data) {
-                window.location.href = 'app/index.html';
+            if (data && data.data.user_id && data.data.role_id) {
+                //设置cookie，10秒过期，此处主要为了传递用户参数
+                var expireDate = new Date();
+                expireDate.setSeconds(expireDate.getSeconds() + 10);
+                $cookies.putObject("mineCookie", { 'user_id': data.data.user_id, 'role_id': data.data.role_id }, {'expires': expireDate.toUTCString()});
+                $window.location.href = 'app/index.html';
+            } else {
+                mine.alert('发生未知错误');
             }
         }, function (error) {
             mine.alert('发生未知错误');
@@ -60,7 +71,7 @@ App.controller('registerCtrl', function ($scope, $location, HttpProvider, mine) 
                 "systemUserInfo.password": $scope.reg.password,
                 "systemUserInfo.user_cn_name": $scope.reg.cname,
                 "systemUserInfo.email": $scope.reg.email,
-                "systemUserInfo.phone": $scope.reg.phone,
+                "systemUserInfo.phone": $scope.reg.phone
             }
         };
         HttpProvider.call(Params).then(function (data) {
@@ -107,15 +118,16 @@ App.service('HttpProvider', function ($http, $q, mine) {
                 return $.param(data);
             }
         };
-        $http.post(Params.srv_name, Params.data, postCfg).success(function (data, status, headers, config) {
+        $http.post(Params.srv_name, Params.data, postCfg).then(function (data, status, headers, config) {
             console.log(data);
+            data = data.data;
             var _code = data.code;
             if (_code === 0) {
                 _data.resolve(data)
             } else {
                 mine.alert(data.message)
             }
-        }).error(function (data, status, headers, config) {
+        }).catch(function (data, status, headers, config) {
             mine.alert('发生未知错误');
         });
         return _data.promise;

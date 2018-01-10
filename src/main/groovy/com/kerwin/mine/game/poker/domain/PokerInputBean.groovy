@@ -9,11 +9,6 @@ import com.kerwin.mine.system.basic.domain.BasicInputBean
 class PokerInputBean extends BasicInputBean{
 
     /**
-     * 用户名
-     */
-    String user_id
-
-    /**
      * 玩家
      */
     String player

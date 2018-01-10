@@ -59,16 +59,22 @@ class UserController {
         String password = input.password
 
         //登录校验
-        checkLogin(user_id, password)
+        SystemUserInfo userInfo = checkLogin(user_id, password)
+        //返回用户ID及用户角色ID
+        SystemUserInfo data = new SystemUserInfo([
+                user_id: user_id,
+                role_id: userInfo.role_id
+        ])
 
         log.debug "用户${user_id} 登录成功"
         log.info "-----------------userLogin End-----------------"
-        return BasicOutputBeanUtil.success()
+        return BasicOutputBeanUtil.success(data)
     }
 
     //登录校验
-    private void checkLogin(String user_id, String password) {
+    private SystemUserInfo checkLogin(String user_id, String password) {
         log.debug "用户${user_id} 尝试登录"
+        SystemUserInfo userInfo = userService.getInfoByKey(user_id)
         //校验用户ID
         log.debug("进行用户密码校验")
         if (userService.checkUserExist(user_id) == 0) {
@@ -85,10 +91,11 @@ class UserController {
 
         //校验激活状态
         log.debug("进行激活状态校验")
-        if (userService.getInfoByKey(user_id)?.status == ActiveStatus.INACTIVE) {
+        if (userInfo?.status == ActiveStatus.INACTIVE) {
             log.error "用户登录异常!!! 账户邮箱未激活"
             throw new MineSystemException(ExceptionEnum.ACCOUNT_INACTIVE)
         }
+        return userInfo
     }
 
     @PostMapping("/system/user/activeUser.do")

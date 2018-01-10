@@ -2,6 +2,7 @@ package com.kerwin.mine.system.user.service
 
 import com.kerwin.mine.system.basic.enums.ExceptionEnum
 import com.kerwin.mine.system.basic.exception.MineSystemException
+import com.kerwin.mine.system.basic.properties.UserProperties
 import com.kerwin.mine.system.basic.utils.MD5Util
 import com.kerwin.mine.system.basic.utils.TimeUtil
 import com.kerwin.mine.system.basic.utils.UUID
@@ -22,6 +23,9 @@ class UserService {
     @Autowired
     private SystemUserMapper userMapper
 
+    @Autowired
+    private UserProperties userProperties
+
     /**
      * 插入一条记录
      */
@@ -31,6 +35,7 @@ class UserService {
             userInfo.setMod_time(TimeUtil.timeStamp)
             userInfo.setCode(UUID.getCode())
             userInfo.setStatus(ActiveStatus.INACTIVE)
+            userInfo.setRole_id(userProperties.defaultRole)
             log.debug("用户密码加密")
             userInfo.setPassword(MD5Util.encode(userInfo.password))
             userMapper.insertInfo(userInfo)

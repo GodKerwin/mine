@@ -7,7 +7,7 @@ ModalCtrl.controller('AlertCtrl', function($scope, $modalInstance, message) {
     $scope.message = message;
     $('body').keypress(function(event){
         var code = event.keyCode || event.which;
-        if (code == 13) {
+        if (code === 13) {
             $scope.$apply(function () {
                 $modalInstance.close(true);
             });

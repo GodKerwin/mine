@@ -1,0 +1,107 @@
+body {
+    font-size: 16px;
+    color: #000000;
+    font-family: 'Armata', Arial, Helvetica, sans-serif;
+    overflow-y: auto;
+    margin: 0;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    object-fit: cover;
+}
+
+/*-------------------公共部分-----------------------*/
+#title {
+    font-size: 3vmax;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-family: "楷体";
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 4vmax;
+    z-index: 100;
+}
+
+/*-------------------登录主页-----------------------*/
+
+#login {
+    height: 32.3%;
+    min-height: 100px;
+    max-height: 300px;
+    right: 10%;
+    margin: 0;
+    position: absolute;
+    top: 18%;
+    width: 15.6%;
+    min-width: 100px;
+    max-width: 300px;
+    text-align: center;
+}
+
+#login, #regist {
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(122, 255, 255, 1);
+}
+
+#login input, #regist input {
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: 0 -5px 45px rgba(100, 100, 100, 0.2) inset, 0 1px 1px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 10px;
+    outline: medium none;
+    padding: 10px;
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 1);
+    width: 100%;
+}
+
+#login input:focus, #regist input:focus {
+    background: rgba(22, 112, 22, 0.3) none repeat scroll 0 0;
+}
+
+/*-------------------注册页面-----------------------*/
+
+#regist {
+    height: 53.8%;
+    right: 10%;
+    margin: 0;
+    position: absolute;
+    top: 18%;
+    width: 15.6%;
+    text-align: center;
+}
+
+#regist input {
+    width: 100%;
+}
+
+#regist .btn-primary {
+    width: 49%;
+}
+
+#code {
+    position: relative;
+}
+
+#code .btn-regist {
+    position: absolute;
+    width: 45%;
+    top: 3px;
+    right: 2%;
+    z-index: 100;
+}

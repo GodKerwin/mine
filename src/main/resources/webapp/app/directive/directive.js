@@ -8,8 +8,8 @@ mineDirective.directive("goElf", function () {
             elfname:'@'
         },
         link: function(scope, element, attrs) {
-            scope.imgname = "./img/go/"+scope.elfname+".jpg"
+            scope.imgname = "./img/game/go/"+scope.elfname+".jpg"
         },
-        template:' <div class="go-elf-div col-xs-1"><label class="go-elf-text">{{elfname}}</label><img src="./img/border.jpg" class="go-elf-border"><img src={{imgname}} alt={{elfname}} class="go-img"></div>'
+        template:' <div class="go-elf-div col-xs-1"><label class="go-elf-text">{{elfname}}</label><img src="./img/game/go/border.jpg" class="go-elf-border"><img src={{imgname}} alt={{elfname}} class="go-img"></div>'
     };
 });

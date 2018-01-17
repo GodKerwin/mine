@@ -51,7 +51,7 @@ body {
     width: 1255px;
     margin: 0 auto;
     position: relative;
-    background-image: url("../img/go/gobg.jpg");
+    background-image: url("../img/game/go/gobg.jpg");
 }
 
 #elf .go-elf-div {
@@ -392,7 +392,7 @@ body {
     height: 40px;
     width: 4.1%;
     cursor: pointer;
-    background-image: url("/app/img/game/poker/Call.png");
+    background-image: url("../img/game/poker/Call.png");
     background-size: 100% 100%
 }
 
@@ -402,7 +402,7 @@ body {
     height: 40px;
     width: 4.1%;
     cursor: pointer;
-    background-image: url("/app/img/game/poker/unCall.png");
+    background-image: url("../img/game/poker/unCall.png");
     background-size: 100% 100%
 }
 
@@ -412,7 +412,7 @@ body {
     height: 40px;
     width: 4.1%;
     cursor: pointer;
-    background-image: url("/app/img/game/poker/push.png");
+    background-image: url("../img/game/poker/push.png");
     background-size: 100% 100%
 }
 
@@ -422,7 +422,7 @@ body {
     height: 40px;
     width: 4.1%;
     cursor: pointer;
-    background-image: url("/app/img/game/poker/unPush.png");
+    background-image: url("../img/game/poker/unPush.png");
     background-size: 100% 100%
 }
 

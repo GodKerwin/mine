@@ -7,7 +7,7 @@ var elf = angular.module('ElfCtrl', []);
 elf.controller('elfCtrl', function ($scope, $location) {
     $scope.showdetail = function (elfname) {
         $(".go-elf-detail").removeClass("hidden");
-        $scope.imgname = "./img/go/" + elfname + ".jpg";
+        $scope.imgname = "./img/game/go/" + elfname + ".jpg";
         $scope.elfname = elfname;
         $scope.elfdescs = {
             "青叶雀": "头顶的树叶可以感知触摸者的心情，与温柔的人待在一起会发出清香的气息。",

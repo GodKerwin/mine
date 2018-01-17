@@ -115,34 +115,86 @@
 </nav>
 <div class="wrap topBgWrapPos">
     <article class="topBgWrap clearfix">
-        <div class="imgBox">
+        <div id="img-carousel" class="imgBox carousel slide">
             <section class="sliderBox">
-                <ul id="show-pic">
-                    <li>
+                <ul id="show-pic" class="carousel-inner">
+                    <li data-target="#img-carousel" class="item active">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner001.jpg">
                     </li>
-                    <li>
+                    <li data-target="#img-carousel" class="item">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner002.jpg">
                     </li>
-                    <li>
+                    <li data-target="#img-carousel" class="item">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner003.jpg">
                     </li>
-                    <li>
+                    <li data-target="#img-carousel" class="item">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner004.jpg">
                     </li>
-                    <li>
+                    <li data-target="#img-carousel" class="item">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner005.jpg">
                     </li>
-                    <li>
+                    <li data-target="#img-carousel" class="item">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner006.jpg">
                     </li>
-                    <li>
+                    <li data-target="#img-carousel" class="item">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner007.jpg">
                     </li>
-                    <li>
+                    <li data-target="#img-carousel" class="item">
                         <img class="showImg" src="../app/img/onlineshop/banner/banner008.jpg">
                     </li>
                 </ul>
+                <table class="img_pagebox" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                    <tr>
+                        <td class="pageBox">
+                            <span class="img_pageBtn carousel-indicators">
+                                <a data-target="#img-carousel" data-slide-to="0" class="active first">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">1</span>
+                                </a>
+                                <a data-target="#img-carousel" data-slide-to="1">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">2</span>
+                                </a>
+                                <a data-target="#img-carousel" data-slide-to="2">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">3</span>
+                                </a>
+                                <a data-target="#img-carousel" data-slide-to="3">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">4</span>
+                                </a>
+                                <a data-target="#img-carousel" data-slide-to="4">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">5</span>
+                                </a>
+                                <a data-target="#img-carousel" data-slide-to="5">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">6</span>
+                                </a>
+                                <a data-target="#img-carousel" data-slide-to="6">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">7</span>
+                                </a>
+                                <a data-target="#img-carousel" data-slide-to="7" class="last">
+                                    <i class="iconfont icon-circlesoild">&#xe64f;</i>
+                                    <span class="num">8</span>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="control">
+                    <div>
+                        <a class="prev" ng-click="prev()">
+                            <i class="iconfont">&#xe680;</i>
+                        </a>
+                        <a class="next" ng-click="next()">
+                            <i class="iconfont">&#xe681;</i>
+                        </a>
+                    </div>
+                </div>
             </section>
         </div>
     </article>

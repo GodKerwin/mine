@@ -28,11 +28,11 @@ body {
 
 @font-face {
     font-family: 'iconfont';  /* project id 542854 */
-    src: url('//at.alicdn.com/t/font_542854_mpwaeh5raleopqfr.eot');
-    src: url('//at.alicdn.com/t/font_542854_mpwaeh5raleopqfr.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_542854_mpwaeh5raleopqfr.woff') format('woff'),
-    url('//at.alicdn.com/t/font_542854_mpwaeh5raleopqfr.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_542854_mpwaeh5raleopqfr.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_542854_jetn100ec6k49529.eot');
+    src: url('//at.alicdn.com/t/font_542854_jetn100ec6k49529.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_542854_jetn100ec6k49529.woff') format('woff'),
+    url('//at.alicdn.com/t/font_542854_jetn100ec6k49529.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_542854_jetn100ec6k49529.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -47,11 +47,6 @@ body {
 
 #sitebar {
     text-align: left;
-}
-
-#sitebar a {
-    cursor: pointer;
-    outline: medium none;
 }
 
 #sitebar-nav {
@@ -641,6 +636,139 @@ body {
     cursor: pointer;
 }
 
+.sliderBox .img_pagebox {
+    z-index: 101;
+    bottom: 16px;
+    left: 50%;
+    margin-left: -375px;
+    width: 920px;
+    position: absolute;
+}
+
+.sliderBox .pageBox {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sliderBox .img_pageBtn {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 14px;
+    padding-right: 14px;
+    vertical-align: baseline;
+}
+
+.sliderBox a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    float: left;
+    height: 20px;
+    margin: 4px 2px 0;
+    position: relative;
+    width: 20px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.sliderBox a:hover .iconfont {
+    color: #e31436;
+}
+
+.sliderBox .active .iconfont {
+    color: #e31436;
+}
+
+.sliderBox .first {
+    margin-left: 0;
+}
+
+.sliderBox .last {
+    margin-right: 0;
+}
+
+.sliderBox .iconfont {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    height: 20px;
+    left: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+
+.sliderBox .num {
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    left: 0;
+    line-height: 12px;
+    position: absolute;
+    text-align: center;
+    top: 4.4px;
+    width: 20px;
+    z-index: 1;
+}
+
+.sliderBox .control {
+    z-index: 101;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.sliderBox .control div {
+    margin: 0 auto;
+    position: relative;
+    width: 1090px;
+}
+
+.sliderBox .control a {
+    background: rgba(166, 166, 166, 0.7) none repeat scroll 0 0;
+    height: 68px;
+    margin: -34px 0 0;
+    position: absolute;
+    top: 0;
+    width: 34px;
+    display: none;
+}
+
+.imgBox:hover .sliderBox .control a {
+    display: block;
+}
+
+.sliderBox .carousel-indicators .active{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    height: 20px;
+    margin: 4px 2px 0;
+    width: 20px;
+}
+
+.sliderBox .control i {
+    position: absolute;
+    top: 24px;
+    left: 6px;
+}
+
+.sliderBox .control a:hover .iconfont {
+    color: #fff;
+}
+
+.sliderBox .prev {
+    left: 169px;
+}
+
+.sliderBox .next {
+    right: 0;
+}
+
 /*------------------------------------------游戏模块----------------------------------------------*/
 
 /*-------------------文字冒险游戏主页-----------------------*/
@@ -674,7 +802,7 @@ body {
     width: 1255px;
     margin: 0 auto;
     position: relative;
-    background-image: url("../img/go/gobg.jpg");
+    background-image: url("../img/game/go/gobg.jpg");
 }
 
 #elf .go-elf-div {

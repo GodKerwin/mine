@@ -971,10 +971,217 @@ body {
     font-size: 12px;
 }
 
+.rowofx {
+    padding-top: 20px;
+    margin-top: -20px;
+}
+
+.rowofx .rowbox {
+    margin: 0 auto;
+    width: 1090px;
+}
+
+.rowofx .rowwrap {
+    width: 1090px;
+    margin-bottom: 10px;
+}
+
+.rowofx .rowof4 {
+    margin-right: -10px;
+}
+
+.rowofx .rowof4 li {
+    float: left;
+    margin-right: 10px;
+}
+
+.rowofx .rowof4 .pic {
+    height: 220px;
+    width: 265px;
+    display: inline-block;
+}
+
+.rowofx .rowof4 .pic img {
+    height: 100%;
+    width: 100%;
+}
+
+.dailylimit .tit {
+    font-size: 14px;
+    color: #999;
+    line-height: 32px;
+    margin: 37px 0 10px;
+    position: relative;
+}
+
+.dailylimit .tit .big {
+    margin-right: 10px;
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.dailylimit .timebox {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.dailylimit .timebox i {
+    background-color: #333;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 1.5px;
+    text-align: center;
+    vertical-align: 1px;
+    width: 20px;
+}
+
+.dailylimit .tit .more {
+    color: #333;
+    position: absolute;
+    right: 0;
+    top: 6px;
+}
+
+.dailylimit .cnt {
+    border-top: 2px solid #333;
+}
+
+.dailylimit .cnt .goodslist {
+    border-left: 1px solid #eaeaea;
+    float: left;
+    width: 868px;
+}
+
+.dailylimit .cnt .goodslist .goods {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    float: left;
+    height: 188px;
+    position: relative;
+    width: 433px;
+}
+
+.dailylimit .cnt .goodslist .goods .pic {
+    display: inline-block;
+    float: left;
+    height: 188px;
+    margin-right: -188px;
+    position: relative;
+    width: 188px;
+}
+
+.dailylimit .cnt .goodslist .goods .detail {
+    float: right;
+    height: 188px;
+    margin-right: 20px;
+    position: relative;
+    width: 205px;
+}
+
+.dailylimit .cnt .goods .intro {
+    height: 21px;
+    margin: 20px 0 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dailylimit .cnt .goods .intro a {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.dailylimit .cnt .goods .shortTitle {
+    height: 40px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.dailylimit .cnt .goods .shortTitle a {
+    color: #666;
+    font-size: 12px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.dailylimit .cnt .goods .price {
+    color: #e11935;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 14px 0 2px;
+}
+
+.dailylimit .cnt .goods .price b {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.dailylimit .cnt .goods .price span {
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 8px;
+}
+
+.dailylimit .cnt .goods .price del {
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dailylimit .cnt .goods .process {
+    border: 1px solid #f3c7c7;
+    border-radius: 9px;
+    color: #de2634;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    width: 100px;
+}
+
+.dailylimit .cnt .goods .process b {
+    background-color: #ffd2c5;
+    display: inline-block;
+    height: 100%;
+}
+
+.dailylimit .cnt .goods .process .text {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.dailylimit .cnt .goods .btn {
+    background-color: #de2634;
+    border: 1px solid #de2634;
+    bottom: 30px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 78px;
+}
+
 /*------------------------------------------游戏模块----------------------------------------------*/
-
 /*-------------------文字冒险游戏主页-----------------------*/
-
 .text {
     background-image: url("../img/game/text/bg.jpg");
     border-radius: 5px;

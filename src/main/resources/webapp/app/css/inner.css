@@ -510,9 +510,14 @@ body {
     cursor: pointer;
     padding-left: 10px;
     text-align: left;
-    width: 160px;
+    width: 150px;
     height: 40px;
     line-height: 40px;
+    box-sizing: content-box;
+}
+
+#top-cats .catitmlst li:hover .ctgcard {
+    display: block;
 }
 
 #top-cats .catitmlst .vcenter {
@@ -590,12 +595,13 @@ body {
     transition: height 0.4s ease 0s;
     width: 930px;
     z-index: 1000;
+    box-sizing: content-box;
 }
 
 #top-cats .ctglist {
     float: left;
     margin: 10px 20px 20px;
-    max-height: 370px;
+    max-height: 368px;
     overflow: hidden;
     width: 610px;
 }
@@ -665,6 +671,50 @@ body {
     color: #e31436;
 }
 
+#top-cats .brandbox {
+    background: #f6f6f6 none repeat scroll 0 0;
+    height: 243px;
+    overflow: hidden;
+    padding: 20px 17px 0;
+    width: 245px;
+    float: left;
+    box-sizing: content-box;
+}
+
+#top-cats .brandbox .brandlist {
+    font-size: 0;
+}
+
+#top-cats .brandbox .brandlist a {
+    float: left;
+    padding: 0;
+}
+
+#top-cats .brandbox .brandlist img {
+    border: 1px solid #eaeaea;
+    height: 80px;
+    margin: -1px 0 0 -1px;
+    width: 80px;
+}
+
+#top-cats .ctgcard .imgbox {
+    background: #f6f6f6 none repeat scroll 0 0;
+    height: 100px;
+    padding: 18px;
+    width: 244px;
+    float: right;
+    box-sizing: content-box;
+}
+
+#top-cats .ctgcard .imgbox a {
+    padding: 0;
+}
+
+#top-cats .ctgcard .imgbox img {
+    height: 100px;
+    width: 244px;
+}
+
 #func-tab {
     float: left;
     height: 40px;
@@ -728,7 +778,7 @@ body {
     top: 0;
 }
 
-#show-pic .showimg {
+#show-pic .showImg {
     height: 400px;
     width: 1920px;
     cursor: pointer;

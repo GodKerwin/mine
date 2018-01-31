@@ -28,11 +28,11 @@ body {
 
 @font-face {
     font-family: 'iconfont';  /* project id 542854 */
-    src: url('//at.alicdn.com/t/font_542854_xuqb8oeq99hpvi.eot');
-    src: url('//at.alicdn.com/t/font_542854_xuqb8oeq99hpvi.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_542854_xuqb8oeq99hpvi.woff') format('woff'),
-    url('//at.alicdn.com/t/font_542854_xuqb8oeq99hpvi.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_542854_xuqb8oeq99hpvi.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_542854_ndazw2ofq5x6flxr.eot');
+    src: url('//at.alicdn.com/t/font_542854_ndazw2ofq5x6flxr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_542854_ndazw2ofq5x6flxr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_542854_ndazw2ofq5x6flxr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_542854_ndazw2ofq5x6flxr.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -917,6 +917,13 @@ body {
     right: 0;
 }
 
+.mainBgWrap {
+    width: 1090px;
+    margin: 0 auto;
+    min-height: 600px;
+    position: relative;
+}
+
 .sellPointBox {
     background: #fff;
     border-bottom: 1px solid #eaeaea;
@@ -1012,6 +1019,7 @@ body {
     line-height: 32px;
     margin: 37px 0 10px;
     position: relative;
+    text-align: left;
 }
 
 .dailylimit .tit .big {
@@ -1081,10 +1089,11 @@ body {
     margin-right: 20px;
     position: relative;
     width: 205px;
+    text-align: left;
 }
 
 .dailylimit .cnt .goods .intro {
-    height: 21px;
+    height: 23px;
     margin: 20px 0 6px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1098,7 +1107,7 @@ body {
 }
 
 .dailylimit .cnt .goods .shortTitle {
-    height: 40px;
+    height: 49px;
     overflow: hidden;
     overflow-wrap: break-word;
     word-break: break-all;
@@ -1147,6 +1156,7 @@ body {
     position: relative;
     text-align: left;
     width: 100px;
+    box-sizing: content-box;
 }
 
 .dailylimit .cnt .goods .process b {
@@ -1155,7 +1165,7 @@ body {
     height: 100%;
 }
 
-.dailylimit .cnt .goods .process .text {
+.dailylimit .cnt .goods .process .processtext {
     height: 100%;
     left: 0;
     position: absolute;
@@ -1167,17 +1177,79 @@ body {
 .dailylimit .cnt .goods .btn {
     background-color: #de2634;
     border: 1px solid #de2634;
-    bottom: 30px;
+    bottom: 22px;
     color: #fff;
-    display: inline-block;
-    font-size: 14px;
-    height: 26px;
-    line-height: 26px;
+    line-height: 14px;
     position: absolute;
     right: 0;
-    text-align: center;
-    text-decoration: none;
     width: 78px;
+    outline: medium none;
+}
+
+.dailylimit .cnt .aside {
+    float: right;
+    height: 378px;
+    width: 221px;
+}
+
+.dailylimit .cnt .aside .pic {
+    display: inline-block;
+}
+
+.dailylimit .cnt .aside img {
+    height: 378px;
+    width: 221px;
+    background: #fff none repeat scroll 0 0;
+}
+
+#doc-foot {
+    margin: 0;
+}
+
+.footBgWrap {
+    background: #fff none repeat scroll 0 0;
+    border-top: 1px solid #eaeaea;
+}
+
+.footBgWrap .box {
+    margin: 0 auto;
+    width: 1196px;
+}
+
+.footBgWrap .box .btmlist {
+    border-bottom: 1px solid #eaeaea;
+    padding: 40px 0;
+}
+
+.footBgWrap .box .btmlist li {
+    float: left;
+    width: 25%;
+    text-align: left;
+}
+
+.footBgWrap .box .btmlist i {
+    float: left;
+    margin: 0 12px 0 0;
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+    line-height: 50px;
+    display: inline-block;
+}
+
+.footBgWrap .box .btmlist .tit {
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.footBgWrap .box .btmlist .desc {
+    font-size: 14px;
+}
+
+.footBgWrap .box .btmlist .tit, .footBgWrap .box .btmlist .desc {
+    display: block;
+    line-height: 22px;
 }
 
 /*------------------------------------------游戏模块----------------------------------------------*/

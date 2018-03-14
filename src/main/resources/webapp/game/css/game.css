@@ -1,0 +1,26 @@
+#game {
+    text-align: center;
+    padding: 0;
+    margin: 50px auto 0 auto;
+    width: 1090px;
+}
+
+#game-control{
+    left: 0;
+    width: 90px;
+    display: inline-block;
+    float: left;
+}
+
+#game-control button {
+    vertical-align: middle;
+    height: 30px;
+    width: 80px;
+    background-color: lightsalmon;
+    color: #000000;
+    margin-left: 5px;
+}
+
+#map{
+    text-align: center;
+}

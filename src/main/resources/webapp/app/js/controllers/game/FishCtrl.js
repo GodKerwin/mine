@@ -155,6 +155,7 @@ fish.controller('fishCtrl', function ($scope, $location, $interval, $timeout, Ht
             if (e.offsetX || e.layerX) {
                 mx = e.offsetX === undefined ? e.layerX : e.offsetX;
                 my = e.offsetY === undefined ? e.layerY : e.offsetY;
+                console.log(mx +":" +my);
             }
         }
     };
